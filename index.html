@@ -177,9 +177,35 @@ footer{padding-block:40px;color:var(--dim);font-size:13px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 .legal{display:flex;gap:18px;flex-wrap:wrap}.legal a{color:var(--dim);font-size:13px}
 .proto{font:500 11px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+
+/* Portada de entrada */
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#05070c url(cielo.jpg) center 60%/cover no-repeat;transition:opacity .9s ease,visibility .9s}
+#intro.out{opacity:0;visibility:hidden}
+#intro.out svg{transform:scale(1.8)}
+#intro.out .enter{transition:transform .9s ease}#intro.out .enter{transform:scale(1.15)}
+#intro .enter{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:18px;color:#fff;padding:24px;margin-top:-12vh;border-radius:12px}
+#intro .enter:focus-visible{outline:2px solid #fff;outline-offset:6px}
+#intro svg{width:min(56vw,280px);height:auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.6));transition:transform .9s ease}
+#intro .enter:hover svg{transform:scale(1.04)}
+#intro .nm{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(40px,7vw,84px);line-height:1;text-shadow:0 2px 24px rgba(0,0,0,.7)}
+#intro .nm b{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:.78em;letter-spacing:.06em;color:#7cc46e}
+#intro .itag{font:500 13px "IBM Plex Mono",monospace;letter-spacing:.28em;text-transform:uppercase;color:#cfe3c0;text-shadow:0 1px 10px #000}
+#intro .hint{font:12px "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:10px;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){#intro,#intro svg{transition:none}#intro .hint{animation:none}}
+body.locked{overflow:hidden}
 </style>
 </head>
-<body style="margin:0">
+<body style="margin:0" class="locked">
+<div id="intro" role="dialog" aria-label="Hosting SKY Palma">
+  <button class="enter" id="enter" type="button" aria-label="Entrar en la web">
+    <svg viewBox="0 0 200 200" aria-hidden="true"><path d="M89.7 12.0 C94.8 12.0 100.0 13.3 105.1 14.6 C110.2 16.0 116.0 17.9 120.5 19.9 C125.0 21.9 129.2 23.6 132.1 26.5 C134.9 29.4 136.5 32.7 137.8 37.5 C139.1 42.2 139.9 49.2 139.8 55.0 C139.6 60.9 137.6 66.7 136.7 72.6 C135.7 78.4 134.7 84.3 134.0 90.1 C133.2 96.0 133.3 101.8 132.1 107.7 C130.8 113.5 128.8 118.7 126.3 125.2 C123.7 131.8 119.5 139.9 116.6 147.2 C113.8 154.5 110.9 162.9 108.9 169.1 C107.0 175.3 106.4 181.3 105.1 184.5 C103.8 187.6 102.4 189.1 101.2 188.0 C100.1 186.9 99.2 182.5 98.2 177.9 C97.1 173.3 96.4 166.9 95.1 160.3 C93.8 153.8 92.6 145.0 90.5 138.4 C88.3 131.8 85.3 126.3 82.0 120.8 C78.6 115.4 74.3 110.6 70.4 105.5 C66.6 100.4 62.4 95.6 58.9 90.1 C55.3 84.6 51.7 78.4 49.3 72.6 C46.8 66.7 44.2 60.9 44.2 55.0 C44.2 49.2 46.5 42.6 49.3 37.5 C52.0 32.3 56.6 28.1 60.8 24.3 C65.0 20.5 69.5 16.7 74.3 14.6 C79.1 12.6 84.6 12.0 89.7 12.0Z" fill="#4f9a45"/><g transform="translate(93 64) scale(1.18)"><g transform="rotate(-35)"><rect x="-34" y="-6" width="62" height="12" rx="1.5" fill="#ffffff" stroke="#2c5f2a" stroke-width="3" paint-order="stroke"/><rect x="24" y="-8" width="16" height="16" rx="1.5" fill="#ffffff" stroke="#2c5f2a" stroke-width="3" paint-order="stroke"/><rect x="-44" y="-3.2" width="11" height="6.4" fill="#ffffff" stroke="#2c5f2a" stroke-width="3" paint-order="stroke"/></g><g stroke-linecap="round"><g stroke="#2c5f2a" stroke-width="6.6"><line x1="0" y1="2" x2="-15" y2="42"/><line x1="0" y1="2" x2="15" y2="42"/><line x1="0" y1="2" x2="0" y2="40"/></g><g stroke="#ffffff" stroke-width="3.6"><line x1="0" y1="2" x2="-15" y2="42"/><line x1="0" y1="2" x2="15" y2="42"/><line x1="0" y1="2" x2="0" y2="40"/></g></g><circle cx="0" cy="1" r="5.5" fill="#ffffff" stroke="#2c5f2a" stroke-width="3" paint-order="stroke"/></g><path d="M160 10 L162.64 19.36 L172 22 L162.64 24.64 L160 34 L157.36 24.64 L148 22 L157.36 19.36Z" fill="#f3efe4"/></svg>
+    <span class="nm">Hosting <b>SKY</b> Palma</span>
+    <span class="itag">Telescope hosting · La Palma</span>
+    <span class="hint">Entrar · Enter · Eintreten</span>
+  </button>
+</div>
+
 
 
 <header class="top">
@@ -247,7 +273,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-bet
 <section id="cielo">
   <div class="wrap">
     <span class="k" data-i18n="sky_k">Por qué La Palma</span>
-    <h2 data-i18n="sky_h2">Una isla entera que apaga la luz para mirar al cielo</h2>
+    <h2 data-i18n="sky_h2">La Palma se apaga de noche para que tú puedas ver las estrellas</h2>
     <p class="intro" data-i18n="sky_intro">La Palma es uno de los pocos lugares del mundo donde la oscuridad está protegida por ley. Aquí está el Observatorio del Roque de los Muchachos, y toda la isla cuida su cielo para que siga siendo útil a la ciencia.</p>
     <div class="grid g3">
       <div class="cell"><span class="k">01</span><h3 data-i18n="sky1_h">Ley del Cielo</h3><p data-i18n="sky1_p">Desde 1988 una ley estatal limita el alumbrado, las emisiones de radio y el tráfico aéreo sobre la isla para proteger la calidad astronómica de los observatorios.</p></div>
@@ -517,7 +543,7 @@ en:{nav_nights:"Group nights",o6:"Group stargazing night",n_k:"Stargazing nights
 hero_eyebrow:"Puntagorda · La Palma · 1,440 m",hero_h1:"Your telescope, under Europe's <em>most protected</em> sky",
 hero_lede:"We rent space for amateur and institutional telescopes on a vineyard estate at 1,440 metres. You run your equipment remotely from home; we look after it here. And if you want to come and see it, you can sleep among the vines.",
 f_alt:"altitude",f_area:"estate",f_law:"Sky Law",f_star:"Reserve & Destination",cta_spot:"Request a spot",cta_stay:"See accommodation",
-sky_k:"Why La Palma",sky_h2:"A whole island that switches off the lights to look at the sky",
+sky_k:"Why La Palma",sky_h2:"La Palma switches off at night so you can see the stars",
 sky_intro:"La Palma is one of the few places in the world where darkness is protected by law. It is home to the Roque de los Muchachos Observatory, and the whole island looks after its sky so it stays useful for science.",
 sky1_h:"The Sky Law",sky1_p:"Since 1988 a national law has limited lighting, radio emissions and air traffic over the island to protect the observatories' astronomical quality.",
 sky2_h:"Starlight Reserve",sky2_p:"The island is a Starlight Reserve and Tourist Destination. The certification belongs to the island, not to the estate, but it describes the sky above you well.",
@@ -556,7 +582,7 @@ de:{nav_nights:"Gruppennächte",o6:"Sternennacht in der Gruppe",n_k:"Sternennäc
 hero_eyebrow:"Puntagorda · La Palma · 1.440 m",hero_h1:"Ihr Teleskop unter dem <em>am besten geschützten</em> Himmel Europas",
 hero_lede:"Wir vermieten Stellplätze für Teleskope von Amateuren und Institutionen auf einem Weingut in 1.440 Metern Höhe. Sie steuern Ihre Ausrüstung bequem von zu Hause; wir kümmern uns vor Ort darum. Und wenn Sie vorbeikommen möchten, übernachten Sie zwischen den Reben.",
 f_alt:"Höhe",f_area:"Gelände",f_law:"Himmelsgesetz",f_star:"Reservat & Reiseziel",cta_spot:"Platz anfragen",cta_stay:"Unterkünfte ansehen",
-sky_k:"Warum La Palma",sky_h2:"Eine ganze Insel macht das Licht aus, um in den Himmel zu schauen",
+sky_k:"Warum La Palma",sky_h2:"La Palma macht nachts das Licht aus, damit Sie die Sterne sehen können",
 sky_intro:"La Palma ist einer der wenigen Orte der Welt, an denen die Dunkelheit gesetzlich geschützt ist. Hier steht das Observatorium Roque de los Muchachos, und die ganze Insel schützt ihren Himmel, damit er für die Wissenschaft nutzbar bleibt.",
 sky1_h:"Das Himmelsgesetz",sky1_p:"Seit 1988 begrenzt ein spanisches Gesetz Beleuchtung, Funkemissionen und Flugverkehr über der Insel, um die astronomische Qualität der Observatorien zu schützen.",
 sky2_h:"Starlight-Reservat",sky2_p:"Die Insel ist Starlight-Reservat und Starlight-Reiseziel. Die Zertifizierung gilt für die Insel, nicht für das Gelände, beschreibt aber gut den Himmel über Ihnen.",
@@ -652,6 +678,16 @@ document.getElementById("form").addEventListener("submit",async e=>{
   build();window.addEventListener("resize",build);
   if(!matchMedia("(prefers-reduced-motion: reduce)").matches){(function loop(t){draw(t);requestAnimationFrame(loop)})(0);}
 })();
+
+// Portada: pulsar el logo abre la web
+(function(){var i=document.getElementById("intro"),b=document.getElementById("enter");
+ function go(){i.classList.add("out");document.body.classList.remove("locked");setTimeout(function(){i.hidden=true},950)}
+ function show(e){if(e)e.preventDefault();i.hidden=false;document.body.classList.add("locked");requestAnimationFrame(function(){requestAnimationFrame(function(){i.classList.remove("out")})})}
+ b.addEventListener("click",go);
+ var m=document.querySelector(".brand .mark");if(m){m.style.cursor="zoom-in";m.addEventListener("click",show)}
+ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!i.hidden)go()});
+ if(location.hash&&location.hash.length>1){i.hidden=true;document.body.classList.remove("locked")}
+ })();
 </script>
 
 </body>
