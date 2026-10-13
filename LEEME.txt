@@ -1,0 +1,23 @@
+HOSTING SKY PALMA - WEB PARA GITHUB PAGES
+==========================================
+
+ANTES DE SUBIR
+1. index.html: busca  PON-AQUI-TU-CORREO  y pon el correo que debe recibir las solicitudes.
+2. aviso-legal.html y privacidad.html: rellena los datos marcados como "pendiente".
+
+SUBIR A GITHUB PAGES
+1. Entra en github.com y crea una cuenta (si no tienes).
+2. Pulsa "New repository". Ponle un nombre neutro (por ejemplo: proyecto-lp-2026).
+   Marca "Public" (GitHub Pages gratis solo funciona con repositorios publicos).
+3. En el repositorio: "Add file" > "Upload files". Arrastra TODO el contenido de esta carpeta
+   (index.html, las paginas legales, robots.txt y la carpeta fonts). Pulsa "Commit changes".
+4. Settings > Pages > Source: "Deploy from a branch" > Branch: main / (root) > Save.
+5. En 1-2 minutos la web estara en:  https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/
+
+ACTIVAR EL FORMULARIO
+- Envia una solicitud de prueba desde la web.
+- Te llegara un correo de FormSubmit: pulsa el boton de activar. A partir de ahi llegan todas.
+
+PRIVACIDAD
+- La web lleva "noindex" y robots.txt: Google y Bing no la mostraran en resultados.
+- Quien tenga el enlace puede verla. El codigo del repositorio es visible en GitHub.
